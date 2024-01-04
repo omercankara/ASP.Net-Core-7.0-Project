@@ -1,0 +1,27 @@
+﻿@model UserInfo
+@{
+    ViewBag.Title = "Başvuru Detayı";
+}
+
+@{
+    var className = Model.WillAttend == true ?  "primary" : "danger";
+}
+
+<main class="text-center">
+    <h4 class="h4">Başvuru Detayı</h4>
+    <p>
+        <span class="badge text-bg-@className">
+            @if (Model.WillAttend == true)
+            {
+                <text>Katılıyor</text>
+            }else
+            {
+                <text>Katılmıyor</text>
+            }
+        </span>
+    </p>
+    <p>İsim @Model.Name</p>
+    <p>EMail @Model.EMail</p>
+    <p>Telefon @Model.Phone</p>
+    <a asp-controller="meeting" asp-action="list" class="btn btn-outline-@className">Katılımcı Listesi</a>
+</mai>

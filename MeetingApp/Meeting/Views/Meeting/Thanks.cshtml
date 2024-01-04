@@ -1,0 +1,17 @@
+﻿@model UserInfo
+@{
+    ViewBag.Title = "Başvuru Durumu ";
+}   
+<main class="text-center">
+    <h1 class="h4">Başvuru Durumu Özeti</h1>
+    @if(Model.WillAttend == true)
+    {
+        <p>Teşekkürler, @Model.Name toplantıya Sizinle Birlikte @ViewBag.UserCount kişi katılıyor </p>
+        <a class="btn btn-sm btn-outline-primary" href="/meeting/list">Katılımcıları Listele</a>
+    }else{
+        <p>@Model.Name, Katılmadığından Dolayı Üzgünüz</p>
+        <a class="btn btn-sm btn-outline-primary" href="/meeting/apply">Başvuru Form</a>
+    }
+
+   
+</main>
